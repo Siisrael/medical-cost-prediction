@@ -4,9 +4,9 @@ from sqlalchemy import create_engine, text
 
 DB_HOST = os.getenv("DB_HOST", "localhost")
 DB_PORT = os.getenv("DB_PORT", "5432")
-DB_NAME = os.getenv("DB_NAME", "metlife")
+DB_NAME = os.getenv("DB_NAME", "medical_data")
 DB_USER = os.getenv("DB_USER", "sisrael")
-DB_PASS = os.getenv("DB_PASS", "challenge123")
+DB_PASS = os.getenv("DB_PASS", "pass123")
 
 CSV_PATH = os.getenv("CSV_PATH", "dataset.csv")
 
