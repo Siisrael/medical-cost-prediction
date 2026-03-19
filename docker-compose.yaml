@@ -2,15 +2,15 @@ services:
   db:
     image: postgres:16
     environment:
-      POSTGRES_DB: metlife
+      POSTGRES_DB: medical_data
       POSTGRES_USER: sisrael
-      POSTGRES_PASSWORD: challenge123
+      POSTGRES_PASSWORD: pass123
     ports:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U sisrael -d metlife"]
+      test: ["CMD-SHELL", "pg_isready -U sisrael -d medical_data"]
       interval: 5s
       timeout: 5s
       retries: 20
@@ -23,9 +23,9 @@ services:
     environment:
       DB_HOST: db
       DB_PORT: "5432"
-      DB_NAME: metlife
+      DB_NAME: medical_data
       DB_USER: sisrael
-      DB_PASS: challenge123
+      DB_PASS: pass123
       CSV_PATH: /app/dataset.csv
       
       MODEL_PATH: /app/modelo_xgboost_final.pkl
